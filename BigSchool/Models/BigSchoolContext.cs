@@ -8,8 +8,8 @@ namespace BigSchool.Models
     public partial class BigSchoolContext : DbContext
     {
         public BigSchoolContext()
-            : base("name=BigSchoolContext")
-        {
+            : base("name=BigSchoolContext2")
+         {
         }
 
         public virtual DbSet<Attendance> Attendances { get; set; }

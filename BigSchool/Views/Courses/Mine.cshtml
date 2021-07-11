@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<BigSchool.Models.Course>
 
+
 @{
     ViewBag.Title = "Mine";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,7 +11,7 @@
         @foreach (var course in Model)
         {
             <li>
-                <div class=" date">
+                <div class="date">
                     <div class="month">
                         @course.DateTime.ToString("MM")
                     </div>
@@ -18,24 +19,20 @@
                         @course.DateTime.ToString("dd")
                     </div>
                 </div>
-                <div class=" details">
+                <div class="details">
                     <span class="lecture">
                         @course.LectureName
                     </span>
                     <span class="category">
                         @course.Category.Name
-
                     </span>
-
                 </div>
                 <div class="action">
-                    <a href="">Edit</a>
-                    <a href="">Delete</a>
+                    <a href="@Url.Action("Edit","Courses",new { id = course.Id})">Edit </a>
+                    <a href="@Url.Action("Delete","Courses",new { id = course.Id})">Delete </a>
+
                 </div>
             </li>
         }
     </ul>
-
-
 </div>
-
